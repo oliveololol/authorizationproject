@@ -1,15 +1,7 @@
 <template>
   <div class="wrapper">
     <header class="header">
-      <!-- <div class="header__container">
-        <a href="#" class="header__logo"
-          ><img
-            src="../assets/icons/logo-full.svg"
-            alt="Logo"
-            class="logo-img"
-          /><span class="logo-text">TMS</span></a
-        >
-      </div> -->
+
     </header>
 
     <div class="login">
@@ -18,7 +10,7 @@
           <transition name="bounce" appear>
             <div class="login__form form">
               <div class="form__header">
-                <h2>{{ $t('editPass') }}</h2>
+                <h2>{{ $t('resetpass') }}</h2>
               </div>
               <div class="from__content">
                 <div class="form__row">
@@ -228,21 +220,28 @@ export default {
         this.$v.password.$touch();
         if (!this.$v.email.$invalid && !this.$v.password.$invalid) {
           const response = await AuthenticationService.login({
-            email: this.email,
-            password: this.password,
+           Login: this.email,
+            Parol: this.password,
           });
           this.$store.dispatch('setUser', response.data.user);
+          
           if (this.Npassword) {
-            this.editedItem.Password = this.Npassword;
-            this.editedItem.ID = response.data.user.ID;
+            
+            this.editedItem.Parol = this.Npassword;
+            
+            this.editedItem.ID = response.data.Id;
+            console.log(22);
+            
           }
           if (this.$route.query.redirect === undefined) {
             this.$router.replace({
               name: 'login',
             });
           }
-          this.setNoticeSuccess(this.$t('updatePassUserMessage'));
           
+          console.log(32);
+          this.setNoticeSuccess(this.$t('updatePassUserMessage'));
+          console.log(this.editedItem)
           await AuthenticationService.resetpass(this.editedItem);
         }
       } catch (error) {

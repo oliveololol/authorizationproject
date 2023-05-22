@@ -1,10 +1,10 @@
-import Api from "./Api";
+import Api from "@/services/Api";
 
 export default {
     login(Credentials){
-        return Api().get('app/Users/Login', Credentials)
+        return Api().post('Users/Login', Credentials)
     },
     resetpass(User){
-        return Api().put('app/Users/resetpassword',User)
+        return Api().put('Users/resetpassword',User)
     },
 };

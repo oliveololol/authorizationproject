@@ -20,6 +20,7 @@ export default new Vuex.Store({
       state.isUserLoggedIn = !!(token);
     },
     setUser(state, user) {
+      console.log(user)
       state.user = user;
     },
     setIsUserLoggedIn(state, isUserLoggedIn) {

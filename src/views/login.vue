@@ -2,15 +2,8 @@
   <!-- Налаштувати сесії -->
   <div class="wrapper">
     <header class="header">
-      <!-- <div class="header__container">
-        <a href="#" class="header__logo"
-          ><img
-            src="../assets/icons/logo-full.svg"
-            alt="Logo"
-            class="logo-img"
-          /><span class="logo-text">TMS</span></a
-        >
-      </div> -->
+ 
+   
     </header>
     <v-layout align-center justify-center v-if="status">
       <div class="login">
@@ -36,22 +29,7 @@
                       placeholder="Логін"
                     />
                     <div v-if="$v.email.$error" class="error-message">{{ $t('errorRequired') }}</div>
-                    <!-- <span 
-                      class="form__hint"
-                      :class="{_prompt : promptMessage}"
-                    >{{ $t('formHint') }}</span>
-                    <v-tooltip right color="error">
-                      <template v-slot:activator="{ on, attrs }">
-                        <span 
-                          v-bind="attrs" 
-                          v-on="on" 
-                          class="form__hint-icon"
-                          :class="{_prompt : promptMessage}"
-                        >
-                        </span>
-                      </template>
-                      <span>{{ $t('term2') }}</span>
-                    </v-tooltip> -->
+                 
                   </div>
     
                   <div class="form__row">
@@ -78,8 +56,8 @@
                   </div>
     
                   <div class="form__actions">
-                    <a href="/editpass" class="btn btn-second">{{
-                      $t('editPass')
+                    <a href="/resetpass" class="btn btn-second">{{
+                      $t('resetpass')
                     }}</a>
                     <button
                       block
@@ -168,15 +146,17 @@ export default {
         this.$v.password.$touch();
         if (!this.$v.email.$invalid && !this.$v.password.$invalid) {
           const response = await AuthenticationService.login({
-            email: this.email,
-            password: this.password,
+            Login: this.email,
+            Parol: this.password,
           });
-          this.$store.dispatch('setToken', response.data.token);
-          this.$store.dispatch('setUser', response.data.user);
+          console.log(response.data)
+          this.$store.dispatch('setToken', response.data.Token);
+          this.$store.dispatch('setUser', response.data.Id);
           clearInterval(this.timerId);
           if (this.$route.query.redirect === undefined) {
+            console.log(11);
             this.$router.replace({
-              name: 'home',
+              name: 'logtable',
             });
           } else this.$router.replace(this.$route.query.redirect);
         }
@@ -185,49 +165,17 @@ export default {
         this.promptMessage = true;
       }
     },
-    // async gLogin() {
-    //   try {
-    //     this.$v.gEmail.$touch();
-    //     this.$v.gPassword.$touch();
-    //     this.$v.gFIO.$touch();
-    //     if (
-    //       !this.$v.gEmail.$invalid &&
-    //       !this.$v.gPassword.$invalid &&
-    //       !this.$v.gFIO.$invalid
-    //     ) {
-    //       const response = await AuthenticationService.gLogin({
-    //         gEmail: this.gEmail,
-    //         gPassword: this.gPassword,
-    //         gFIO: this.gFIO,
-    //       });
-    //       this.$store.dispatch('setToken', response.data.token);
-    //       this.$store.dispatch('setUser', response.data.user);
-
-    //       clearInterval(this.timerId);
-
-    //       this.$router.replace({
-    //         name: 'home',
-    //       });
-    //     }
-    //   } catch (error) {
-    //     this.gError = error.error;
-    //   }
-    // },
+   
     clear() {
       this.email = '';
       this.password = '';
       this.error = null;
 
-      // this.gEmail = '';
-      // this.gPassword = '';
-      // this.gFIO = '';
-      // this.gError = null;
-      // this.$v.$reset();
     },
     async check() {
       try {
-        const result = (await StatusService.checkStatus()).data;
-        if (result.status) this.status = true;
+        const result = (await StatusService.checkStatus());
+        if (result) this.status = true;
         else this.status = false;
       } catch (ex) {
         this.status = false;
@@ -259,25 +207,7 @@ export default {
     this.timerId = setInterval(this.check, 6000);
   },
   computed: {
-    // gFIOErrors() {
-    //   const errors = [];
-    //   if (!this.$v.gFIO.$dirty) return errors;
-    //   !this.$v.gFIO.required && errors.push(this.$t('errorRequired'));
-    //   !this.$v.gFIO.minLength && errors.push(this.$t('errorMinLength4'));
-    //   return errors;
-    // },
-    // gEmailErrors() {
-    //   const errors = [];
-    //   if (!this.$v.gEmail.$dirty) return errors;
-    //   !this.$v.gEmail.required && errors.push(this.$t('errorRequired'));
-    //   return errors;
-    // },
-    // gPasswordErrors() {
-    //   const errors = [];
-    //   if (!this.$v.gPassword.$dirty) return errors;
-    //   !this.$v.gPassword.required && errors.push(this.$t('errorRequired'));
-    //   return errors;
-    // },
+  
     EmailErrors() {
       const errors = [];
       if (!this.$v.email.$dirty) return errors;
@@ -295,12 +225,7 @@ export default {
     },
   },
   validations: {
-    // gEmail: { required },
-    // gPassword: { required },
-    // gFIO: {
-    //   required,
-    //   minLength: minLength(4),
-    // },
+    
     email: { required },
     password: { required },
   },
