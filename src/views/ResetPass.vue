@@ -22,7 +22,7 @@
                     color="success"
                     input="$v.email.$touch()"
                     @blur="$v.email.$touch()"
-                    class="form__input loginInput"
+                    class="form__input loginInput mx-6"
                     placeholder="Логін"
                   />
                   <div v-if="$v.email.$error" class="error-message">
@@ -39,7 +39,7 @@
                     color="success"
                     input="$v.password.$touch()"
                     @blur="$v.password.$touch()"
-                    class="form__input loginInput"
+                    class="form__input loginInput mx-6"
                     placeholder="Пароль"
                   />
                   <span
@@ -59,7 +59,7 @@
                   <span class="icon-pass">password</span>
                   <input
                     v-model="Npassword"
-                    class="form__input loginInput"
+                    class="form__input loginInput mx-6"
                     placeholder="Новий пароль"
                     :label="$t('lblPassword')"
                     :type="showNPassword ? 'text' : 'password'"
@@ -103,7 +103,7 @@
                   <input
                     v-model="Cpassword"
                     :type="showCPassword ? 'text' : 'password'"
-                    class="form__input loginInput"
+                    class="form__input loginInput mx-6"
                     placeholder="Підтвердження паролю"
                     v-on:keyup.enter="login"
                     input="$v.Cpassword.$touch()"
@@ -135,7 +135,7 @@
                 </div>
   
                 <div class="form__actions">
-                  <a href="/login" class="btn btn-second">{{ $t('cancel') }}</a>
+                  <a href="/login" class="btn btn-second mx-6">{{ $t('cancel') }}</a>
                   <button
                     block
                     class="btn btn-main loginBatton"

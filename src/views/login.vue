@@ -5,19 +5,21 @@
  
    
     </header>
-    <v-layout align-center justify-center v-if="status">
-      <div class="login">
-        <div class="login__container">
-          <div class="login__content">
+    <v-layout  align-center justify-center v-if="status"  >
+      <div class="login ">
+        <div class="login__container ">
+          <div class="login__content  ">
             <transition name="bounce" appear>
-              <div class="login__form form">
-                <div class="form__header">
-                  <h2>{{ $t('logIn') }}</h2>
+              
+              <div class="login__form.form elevation-12">
+                <div class="form__header  ">
+                  <h2 class="autorization ">{{ $t('logIn') }}</h2>
                 </div>
+                
                 <div class="from__content">
-                  <div class="form__row">
-                    <span class="icon-login">login</span>
-                    <input
+                  <div class="form__row ">
+                    <v-icon  color="pink" size="x-large" >mdi-human-scooter</v-icon>
+                    <input 
                       v-model="email"
                       :label="$t('lblLogin')"
                       type="text"
@@ -25,16 +27,16 @@
                       :error-messages="EmailErrors"
                       input="$v.email.$touch()"
                       @blur="$v.email.$touch()"
-                      class="form__input loginInput"
+                      class=" justify-center form__input  loginInput   " 
                       placeholder="Логін"
                     />
-                    <div v-if="$v.email.$error" class="error-message">{{ $t('errorRequired') }}</div>
+                    <div v-if="$v.email.$error" class="error-message ">{{ $t('errorRequired') }}</div>
                  
                   </div>
     
-                  <div class="form__row">
-                    <span class="icon-pass">password</span>
-                    <input
+                  <div class="form__row ml-6 ">
+                    <v-icon class="mx-3"  color="info" size="x-large">mdi-form-textbox-password</v-icon>
+                    <input 
                       v-model="password"
                       :label="$t('lblPassword')"
                       :type="showPassword ? 'text' : 'password'"
@@ -45,31 +47,35 @@
                       :error-messages="PasswordErrors"
                       input="$v.password.$touch()"
                       @blur="$v.password.$touch()"
-                      class="form__input loginInput"
+                      class="  form__input loginInput    "
                       placeholder="Пароль"
                     />
-                    <span class="btn-icon btn-icon-pass" @click.stop="toggleShowPassword()">
-                      <v-icon v-show="showPassword" color="indigo darken-4">visibility</v-icon>
-                      <v-icon v-show="!showPassword" color="#8B8B8B">visibility_off</v-icon>
+                    <span class="btn-icon btn-icon-pass ml-4" @click.stop="toggleShowPassword()">
+                      <v-icon v-show="showPassword" color="indigo darken-4">mdi-eye</v-icon>
+                      <v-icon v-show="!showPassword" color="indigo darken-4" >mdi-eye-off</v-icon>
+                      
                     </span>
                     <div v-if="$v.password.$error" class="error-message">{{ $t('errorRequired') }}</div>
                   </div>
     
-                  <div class="form__actions">
+                  <div class="form__actions ">
                     <a href="/resetpass" class="btn btn-second">{{
                       $t('resetpass')
                     }}</a>
                     <button
+                      
                       block
-                      class="btn btn-main loginBatton"
+                      class="btn btn-main loginBatton "
                       large
                       @click="login"
                     >
                       {{ $t('singIn') }}
                     </button>
+                    
                   </div>
-                  <div class="form__prompt">
-                      <v-tooltip top color="error" v-if="error">
+                  
+                  <div class="form__prompt ">
+                      <v-tooltip top color="error" v-if="this.promptMessage == true">
                         <template v-slot:activator="{ on, attrs }">
                           <div v-bind="attrs" v-on="on">
                               <p class="form__promt-text">
@@ -125,12 +131,6 @@ export default {
       error: null,
       promptMessage: false,
       showPassword: false,
-      // activeTab: 0, // активный таб
-      // // гость
-      // gEmail: '',
-      // gPassword: '',
-      // gFIO: '',
-      // gError: null,
       timerId: null,
       status: true,
 
@@ -154,13 +154,16 @@ export default {
           this.$store.dispatch('setUser', response.data.Id);
           clearInterval(this.timerId);
           if (this.$route.query.redirect === undefined) {
-            console.log(11);
+            
             this.$router.replace({
               name: 'logtable',
             });
-          } else this.$router.replace(this.$route.query.redirect);
+          } else
+          {
+           this.$router.replace(this.$route.query.redirect);}
         }
       } catch (error) {
+        // alert("не правильний логін або пароль ");
         this.error = error.error;
         this.promptMessage = true;
       }

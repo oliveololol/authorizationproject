@@ -1,46 +1,56 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-data-table :headers="header" :items="item">
-       
+  <v-container >
+    <v-row class="form_row " >
+      <v-data-table 
+         class=" v-table elevation-21 "
+        :headers="header"
+        :items="item"
+      >
       </v-data-table>
+      <div class="form__actions mt-16">
+                  <a @click="logout();" href="/login" class="btn btn-second mx-6">{{ $t('cancel') }}</a>
+                  
+                </div>
     </v-row>
   </v-container>
 </template>
 <script>
 import logtable from "@/services/log.js";
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
+  logtable,
   data() {
     return {
+      
       header: [
         { text: "id-user", value: "IdUsers" },
-        { text: "event", value: "IdEvent" },
+        { text: "event", value: "IdEventNavigation.Nameevent" },
         { text: "time", value: "Date" },
       ],
       item: [],
     };
   },
-  created(){
+  created() {
     this.init();
   },
-  computed:{
-    ...mapState(['user'])
+  computed: {
+    ...mapState(["user"]),
   },
-  methods:{
-   async init(){
-    try{
-        console.log(this.user);
-        this.item=(await logtable.GetLogsByUser(this.user)).data;
+  methods: {
+    ...mapActions(['setLogout']),
+    async init() {
+      try {
         
+        this.item = (await logtable.GetLogsByUser(this.user)).data;
+      } catch {
+        console.log("error");
+      }
+    },
+    logout(){
+this.setLogout();
     }
-    catch{
-        console.log("error")
-    }
-   }
-  }
-  
+  },
 };
 </script>
 <style></style>

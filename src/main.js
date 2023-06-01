@@ -6,7 +6,9 @@ import Vuelidate from 'vuelidate';
 import {sync} from 'vuex-router-sync';
 import {i18n} from './plugins/i18n';
 import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css'
+import 'vuetify/dist/vuetify.min.css';
+import colors from 'vuetify/lib/util/colors';
+import '@mdi/font/css/materialdesignicons.css'
 
 Vue.use(Vuetify)
 
@@ -20,7 +22,7 @@ const vuetify = new Vuetify({
   },
   // iconfont: 'mdiSvg' // 'md'  'mdi'  'fa'  'fa4'
   icons: {
-    iconfont: 'mdiSvg', // 'mdi'  'mdiSvg'  'md'  'fa'  'fa4'  'faSvg'
+    iconfont: 'md', // 'mdi'  'mdiSvg'  'md'  'fa'  'fa4'  'faSvg'
   },
 })
 
@@ -31,6 +33,7 @@ sync(store, router);
 Vue.config.productionTip = false
 
 new Vue({
+  colors,
   vuetify,
   i18n,
   router,

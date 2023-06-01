@@ -1,0 +1,59 @@
+html{
+    
+    /* background-image: url(C:\Users\38098\Downloads\zxczxczxc.png); */
+} 
+/* login,resetpass*/
+.from__content{
+
+}
+.login__form.form{
+   
+}
+.v-main{
+    /* flex-direction: column;
+    background-image: url(https://filmschoolrejects.com/wp-content/uploads/2019/08/itsatrap-2.jpg)   */
+}
+
+.h2{
+    background-color: blueviolet;
+}
+.autorization{
+    
+    padding-bottom: 12px;;
+}
+.form__row{
+   margin-left: -20px;
+  
+    
+}
+.v-icon{
+    align-items: center;
+    margin-right: 16px;
+
+}
+.img{
+    background-image: url(C:\Users\38098\Downloads\zxczxczxc.png); 
+}
+.btn{
+    margin-right: 16px;
+}
+
+
+
+/* v-datatable */
+.form_row{
+    flex-direction: column;
+}
+.v-table{
+    box-sizing: inherit;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    text-transform: none;
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }

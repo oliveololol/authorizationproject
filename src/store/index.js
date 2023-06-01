@@ -40,5 +40,10 @@ export default new Vuex.Store({
     setIsLoad({commit}, isLoad) {
       commit('setIsLoad', isLoad);
     },
+    setLogout({commit}){
+      commit('setUser', null);
+      commit('setToken', null);
+      commit('setIsLoad', false);
+    }
   },
 });
