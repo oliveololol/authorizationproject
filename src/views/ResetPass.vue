@@ -1,10 +1,10 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper " >
     <header class="header">
 
     </header>
 
-    <div class="login">
+    <div class="login r">
       <div class="login__container">
         <div class="login__content">
           <transition name="bounce" appear>
@@ -14,7 +14,7 @@
               </div>
               <div class="from__content">
                 <div class="form__row">
-                  <span class="icon-login">login</span>
+                  <span class="icon-login"></span>
                   <input
                     v-model="email"
                     :label="$t('lblLogin')"
@@ -25,13 +25,13 @@
                     class="form__input loginInput mx-6"
                     placeholder="Логін"
                   />
-                  <div v-if="$v.email.$error" class="error-message">
+                  <div v-if="$v.email.$error" class="error-message q">
                     {{ $t('errorRequired') }}
                   </div>
                 </div>
   
                 <div class="form__row">
-                  <span class="icon-pass">password</span>
+                  <span class="icon-pass"></span>
                   <input
                     v-model="password"
                     :label="$t('lblPassword')"
@@ -46,17 +46,17 @@
                     class="btn-icon btn-icon-pass"
                     @click.stop="toggleShowPassword('pass')"
                   >
-                    <v-icon v-show="showPassword" color="indigo darken-4"
-                      >visibility</v-icon
+                    <v-icon v-show="showPassword" 
+                      >mdi-eye</v-icon
                     >
-                    <v-icon v-show="!showPassword" color="#8B8B8B"
-                      >visibility_off</v-icon
+                    <v-icon v-show="!showPassword" 
+                      >mdi-eye-off</v-icon
                     >
                   </span>
                 </div>
   
                 <div class="form__row">
-                  <span class="icon-pass">password</span>
+                  <span class="icon-pass"></span>
                   <input
                     v-model="Npassword"
                     class="form__input loginInput mx-6"
@@ -73,11 +73,11 @@
                     class="btn-icon btn-icon-pass"
                     @click.stop="toggleShowPassword('new')"
                   >
-                    <v-icon v-show="showNPassword" color="indigo darken-4"
-                      >visibility</v-icon
+                    <v-icon v-show="showNPassword" 
+                      >mdi-eye</v-icon
                     >
-                    <v-icon v-show="!showNPassword" color="#8B8B8B"
-                      >visibility_off</v-icon
+                    <v-icon v-show="!showNPassword" 
+                      >mdi-eye-off</v-icon
                     >
                   </span>
                   <div
@@ -99,7 +99,7 @@
                   </div>
                 </div>
                 <div class="form__row">
-                  <span class="icon-pass">password</span>
+                  <span class="icon-pass"></span>
                   <input
                     v-model="Cpassword"
                     :type="showCPassword ? 'text' : 'password'"
@@ -114,11 +114,11 @@
                     class="btn-icon btn-icon-pass"
                     @click.stop="toggleShowPassword('confirm')"
                   >
-                    <v-icon v-show="showCPassword" color="indigo darken-4"
-                      >visibility</v-icon
+                    <v-icon v-show="showCPassword" 
+                      >mdi-eye</v-icon
                     >
-                    <v-icon v-show="!showCPassword" color="#8B8B8B"
-                      >visibility_off</v-icon
+                    <v-icon v-show="!showCPassword" 
+                      >mdi-eye-off</v-icon
                     >
                   </span>
                   <div
@@ -167,10 +167,10 @@
                         <p class="form__promt-text">
                           {{ $t('conditionsPass') }}
                         </p>
-                        <span class="form__prompt-icon"></span>
+                        <span class="form__prompt-icon "></span>
                       </div>
                     </template>
-                    <span>{{ $t('term1') }}</span>
+                    <span >{{ $t('term1') }}</span>
                   </v-tooltip>
                 </div>
               </div>

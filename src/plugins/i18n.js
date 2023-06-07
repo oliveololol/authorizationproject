@@ -22,7 +22,7 @@ export const i18n = new VueI18n({
       serverNotResponse: 'Сервер не відповідає...',
       lblLogin: 'Логін',
       lblPassword: 'Пароль',
-      errorRequired: 'Введіть данні',
+      errorRequired: 'Введіть дані',
       formHint: 'помилка'
     },
   },

@@ -17,7 +17,10 @@ export default {
 <style>
 @import "./assets/style.css";
 #app {
-  background-image:url(https://gdb.rferl.org/7B5630DD-1E13-4400-B850-DA636ED209F5_cx0_cy3_cw93_w1200_r1.jpg);
+  background-image:url(C:\Users\38098\Downloads\Untitled134_20230607150250.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   font-family: 'Material Icons';
   font-family:  Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

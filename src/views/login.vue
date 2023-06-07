@@ -1,6 +1,6 @@
 <template>
   <!-- Налаштувати сесії -->
-  <div class="wrapper">
+  <div class="wrapper" >
     <header class="header">
  
    
@@ -23,12 +23,13 @@
                       v-model="email"
                       :label="$t('lblLogin')"
                       type="text"
-                      color="success"
+                      color="succes"
                       :error-messages="EmailErrors"
                       input="$v.email.$touch()"
                       @blur="$v.email.$touch()"
                       class=" justify-center form__input  loginInput   " 
                       placeholder="Логін"
+                      
                     />
                     <div v-if="$v.email.$error" class="error-message ">{{ $t('errorRequired') }}</div>
                  
@@ -50,11 +51,11 @@
                       placeholder="Пароль"
                     />
                     <span class="btn-icon btn-icon-pass " @click.stop="toggleShowPassword()">
-                      <v-icon v-show="showPassword" color="indigo darken-4">mdi-eye</v-icon>
-                      <v-icon v-show="!showPassword" color="indigo darken-4" >mdi-eye-off</v-icon>
+                      <v-icon v-show="showPassword" >mdi-eye</v-icon>
+                      <v-icon v-show="!showPassword"  >mdi-eye-off</v-icon>
                       
                     </span>
-                    <div v-if="$v.password.$error" class="error-message">{{ $t('errorRequired') }}</div>
+                    <div v-if="$v.password.$error" class="error-message" >{{ $t('errorRequired') }}</div>
                   </div>
     
                   <div class="form__actions ">

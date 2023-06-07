@@ -1,25 +1,38 @@
-.block{
-    margin-top: 150px;
-}
+
 /* login,resetpass*/
 
 .login{
     /* border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 4px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); */
+    width: 250px;
     background-color: transparent;
+    border-radius: 10px;
 }
-.btn{
-
-}
+ .r{
+width: 280px;
+} 
 .form__input{
-background-color: white;
+    
+    color: black;
+background-color: transparent;
+padding-bottom: 1%;
+}
+input::placeholder {
+    color:#000000;
+    border-bottom: 1px solid black;
+  }
+  input:focus {
+    outline: none;
+    background-color: #5960534d;
+    
 }
 .autorization{
 
     padding-bottom: 12px;;
 }
 .form__row{
+    padding-left: 2%;
    text-align: left;
    position: relative;
    padding-bottom:2%;
@@ -30,45 +43,76 @@ background-color: white;
     margin-right: 16px;
 
 }
-.img{
-    background-image: url(C:\Users\38098\Downloads\zxczxczxc.png);
-}
+
 
 .wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin-top: 150px;
   }
+  
 .form__actions{
-    margin-inline: 4px;
+    padding-bottom: 4px;
+    padding-inline: 6px;
     display: flex;
-  justify-content: space-between;
-
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 .btn-icon-pass{
     position: absolute;
-    
+    background-color: #00000026;
     left: 82%;
+    box-shadow:0px 2px 4px rgba(0, 0, 0, 0.521);
+    border-radius: 10px;
+    width: 25px;
+    color:#000000;
     
 }
+.q{
+    margin-left: 9%;
+}
+.loginBatton{
+    width: 110px;
+    padding-top: 3px;
+    background-color: #09ff0074;
+    box-shadow:0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-right: 5%;
+}
+.error-message{
+color: rgba(240, 0, 28, 0.863);
+font-size:12px;
+}
 .btn-second{
-    box-shadow:0px 4px 6px rgba(0, 0, 0, 0.5);
-    background-color: #abd7eb;
-    border-radius: 4px;
-    color: #0a6d62;
+    background-color: #00000026;
+     color: #0a6d62; 
 }
 
 .loginBatton{
-    color:#7b6953;
+    color:#000000;
 }
 
 /* v-datatable */
 .form_row{
     flex-direction: column;
 }
+.qw{
+    width: 110px;
+  padding-top: 3px;
+  background-color: #09ff0074;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: absolute;
+ bottom:50px;
+}
 .v-table{
     box-sizing: inherit;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.8) !important;
 }
 .material-icons {
     font-family: 'Material Icons';
@@ -79,4 +123,37 @@ background-color: white;
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  .v-application{
+    display: none;
+  }
+  a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    box-shadow:0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
+  }
+  
+ 
+  
+  a:visited {
+    color:#000000 !important;
+   
+  }
+  
+  a:focus {
+    border-bottom: 1px solid;
+    
+  }
+  
+  /* a:hover {
+    border-bottom: 1px solid;
+    background: #60a7d3;
+  } */
+  
+  a:active {
+    background: #a6c38f;
+    
   }

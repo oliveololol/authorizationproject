@@ -8,7 +8,7 @@
       >
       </v-data-table>
       <div class="form__actions mt-16">
-                  <a @click="logout();" href="/login" class="btn btn-second mx-6">{{ $t('cancel') }}</a>
+                  <a @click="logout();" href="/login" class="btn btn-second qw ">{{ $t('cancel') }}</a>
                   
                 </div>
     </v-row>
