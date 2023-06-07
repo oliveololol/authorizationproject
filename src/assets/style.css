@@ -1,30 +1,29 @@
-html{
-    
-    /* background-image: url(C:\Users\38098\Downloads\zxczxczxc.png); */
-} 
+.block{
+    margin-top: 150px;
+}
 /* login,resetpass*/
-.from__content{
+
+.login{
+    /* border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); */
+    background-color: transparent;
+}
+.btn{
 
 }
-.login__form.form{
-   
-}
-.v-main{
-    /* flex-direction: column;
-    background-image: url(https://filmschoolrejects.com/wp-content/uploads/2019/08/itsatrap-2.jpg)   */
-}
-
-.h2{
-    background-color: blueviolet;
+.form__input{
+background-color: white;
 }
 .autorization{
-    
+
     padding-bottom: 12px;;
 }
 .form__row{
-   margin-left: -20px;
-  
-    
+   text-align: left;
+   position: relative;
+   padding-bottom:2%;
+
 }
 .v-icon{
     align-items: center;
@@ -32,13 +31,37 @@ html{
 
 }
 .img{
-    background-image: url(C:\Users\38098\Downloads\zxczxczxc.png); 
-}
-.btn{
-    margin-right: 16px;
+    background-image: url(C:\Users\38098\Downloads\zxczxczxc.png);
 }
 
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+.form__actions{
+    margin-inline: 4px;
+    display: flex;
+  justify-content: space-between;
 
+}
+.btn-icon-pass{
+    position: absolute;
+    
+    left: 82%;
+    
+}
+.btn-second{
+    box-shadow:0px 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: #abd7eb;
+    border-radius: 4px;
+    color: #0a6d62;
+}
+
+.loginBatton{
+    color:#7b6953;
+}
 
 /* v-datatable */
 .form_row{

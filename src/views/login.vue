@@ -5,20 +5,20 @@
  
    
     </header>
-    <v-layout  align-center justify-center v-if="status"  >
+    <v-layout class="block"  align-center justify-center v-if="status"  >
       <div class="login ">
         <div class="login__container ">
           <div class="login__content  ">
             <transition name="bounce" appear>
               
-              <div class="login__form.form elevation-12">
+              <div class="login__form.form ">
                 <div class="form__header  ">
                   <h2 class="autorization ">{{ $t('logIn') }}</h2>
                 </div>
                 
                 <div class="from__content">
-                  <div class="form__row ">
-                    <v-icon  color="pink" size="x-large" >mdi-human-scooter</v-icon>
+                  <div class="form__row back">
+                    
                     <input 
                       v-model="email"
                       :label="$t('lblLogin')"
@@ -34,8 +34,7 @@
                  
                   </div>
     
-                  <div class="form__row ml-6 ">
-                    <v-icon class="mx-3"  color="info" size="x-large">mdi-form-textbox-password</v-icon>
+                  <div class="form__row  ">
                     <input 
                       v-model="password"
                       :label="$t('lblPassword')"
@@ -50,7 +49,7 @@
                       class="  form__input loginInput    "
                       placeholder="Пароль"
                     />
-                    <span class="btn-icon btn-icon-pass ml-4" @click.stop="toggleShowPassword()">
+                    <span class="btn-icon btn-icon-pass " @click.stop="toggleShowPassword()">
                       <v-icon v-show="showPassword" color="indigo darken-4">mdi-eye</v-icon>
                       <v-icon v-show="!showPassword" color="indigo darken-4" >mdi-eye-off</v-icon>
                       
@@ -254,7 +253,7 @@ export default {
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
-  color: #0A083A;
+  /* color: #0A083A; */
   text-align: center;
 }
 .headline__timer{
@@ -264,7 +263,7 @@ export default {
   font-size: 25px !important;
   line-height: 29px;
   text-transform: uppercase;
-  color: #0A083A; 
+  /* color: #0A083A;  */
   margin-top: 10px;
 }
 
