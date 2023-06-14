@@ -7,4 +7,7 @@ export default {
     resetpass(User){
         return Api().put('Users/resetpassword',User)
     },
+    registration(reg){
+        return Api().post('Users/registration',reg)
+    }
 };

@@ -23,7 +23,13 @@ export const i18n = new VueI18n({
       lblLogin: 'Логін',
       lblPassword: 'Пароль',
       errorRequired: 'Введіть дані',
-      formHint: 'помилка'
+      formHint: 'помилка',
+      exit:'вихід',
+      changedata:'змінити дані',
+      registration:'Pегістрація',
+      atorization:'Авторизація',
+      term3:'Такий користувач вже існує',
+      back:'повернутись назад'
     },
   },
 });

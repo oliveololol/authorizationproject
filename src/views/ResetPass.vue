@@ -143,6 +143,7 @@
                     @click="login"
                     :disabled="this.isDisabled"
                     :class="{ _disable: isDisabled }"
+                    
                   >
                     {{ $t('edit') }}
                   </button>
